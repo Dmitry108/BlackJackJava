@@ -1,4 +1,4 @@
-package blackjack.model;
+package blackjack.model.cardsdeck;
 
 import java.util.List;
 

@@ -1,13 +1,18 @@
 package blackjack.application;
 
-import blackjack.model.*;
+import blackjack.di.BlackJackModule;
+import blackjack.model.cardsdeck.Card;
+import blackjack.model.cardsdeck.Deck;
+import blackjack.model.cardsdeck.DeckImpl;
+import blackjack.view.GameConsoleView;
 
 public class BlackJackApp {
+
+    public BlackJackApp() {
+        new GameConsoleView();
+    }
+
     public static void main(String[] args) {
-        Deck deck = new DeckImpl(1);
-        deck.shuffle();
-        Card card = deck.getCard();
-        System.out.println(card);
-        System.out.println(deck);
+        new BlackJackApp();
     }
 }

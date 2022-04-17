@@ -1,10 +1,19 @@
 package blackjack.view;
 
+import blackjack.di.BlackJackViewInjector;
 import blackjack.presenter.BlackJackPresenter;
-import blackjack.presenter.GamePresenter;
 
 public class GameConsoleView implements BlackJackView {
 
-    private BlackJackPresenter presenter = new GamePresenter(this);
+    private BlackJackPresenter presenter;
 
+    public GameConsoleView() {
+        BlackJackViewInjector injector = new BlackJackViewInjector();
+        injector.inject(this);
+    }
+
+    @Override
+    public void setPresenter(BlackJackPresenter presenter) {
+        this.presenter = presenter;
+    }
 }
