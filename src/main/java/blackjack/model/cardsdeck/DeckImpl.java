@@ -14,7 +14,7 @@ public class DeckImpl implements Deck {
         for (int n = 0; n < cardSetCount; n++) {
             for (Suit suit : Suit.values()) {
                 for (Face face : Face.values()) {
-                    deck.add(new Card(suit, face));
+                    deck.add(new Card(suit, face, 'X'));
                 }
             }
         }
@@ -34,6 +34,11 @@ public class DeckImpl implements Deck {
     public void fillDeck(List<Card> cards) {
         deck.addAll(cards);
         shuffle();
+    }
+
+    @Override
+    public int getSize() {
+        return deck.size();
     }
 
     @Override
