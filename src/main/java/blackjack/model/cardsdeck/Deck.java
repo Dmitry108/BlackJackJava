@@ -6,4 +6,5 @@ public interface Deck {
     void shuffle();
     Card getCard();
     void fillDeck(List<Card> cards);
+    int getSize();
 }

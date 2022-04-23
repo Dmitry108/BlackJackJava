@@ -1,16 +1,21 @@
 package blackjack.model.cardsdeck;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
+@Setter
+@RequiredArgsConstructor
 public class Card {
     private final Suit suit;
     private final Face face;
+    private final char back;
+
+    private boolean isOpen = true;
 
     @Override
     public String toString() {
-        return face.getName() + suit.getSign();
+        return isOpen() ? face.getName() + suit.getSign() : Character.toString(back);
     }
 }
